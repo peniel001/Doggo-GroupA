@@ -64,11 +64,22 @@ import React from 'react'
 
         const options = document.getElementById("options"); // Container for the multiple-choice buttons
 
-        // TODO 4(Chibrouma)
+        // TODO 4(Chiburuoma)
         // For each of the choices in choicesArray,
         // Create a button element whose name, value, and textContent properties are the value of that choice,
         // attach a "click" event listener with the buttonHandler function,
-        // and append the button as a child of the options element
+        // and append the button as a child of the options elementl
+    options.replaceChildren();
+
+    choicesArray.forEach(choice => {
+        const button = document.createElement("button");
+        button.name = choice;
+        button.value = choice;
+        button.textContent = choice;
+
+        button.addEventListener("click", buttonHandler);
+        options.appendChild(button);
+    });
         
     }
 
