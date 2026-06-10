@@ -18,7 +18,7 @@ import React from 'react'
 
 
 
-    // TODO 1
+    // TODO 1(David)
     // Given an array of possible answers, a correct answer value, and a number of choices to get,
     // return a list of that many choices, including the correct answer and others from the array
     function getMultipleChoices(n, correctAnswer, array) {
@@ -28,7 +28,7 @@ import React from 'react'
     }
 
     
-    // TODO 2
+    // TODO 2(Laura)
     // Given a URL such as "https://images.dog.ceo/breeds/poodle-standard/n02113799_2280.jpg"
     // return the breed name string as formatted in the breed list, e.g. "standard poodle"
     function getBreedFromURL(url) {
@@ -39,7 +39,7 @@ import React from 'react'
 
 
 
-    // TODO 3
+    // TODO 3(Comfort)
     // Given a URL, fetch the resource at that URL, 
     // then parse the response as a JSON object,
     // finally return the "message" property of its body
@@ -64,7 +64,7 @@ import React from 'react'
 
         const options = document.getElementById("options"); // Container for the multiple-choice buttons
 
-        // TODO 4
+        // TODO 4(Chibrouma)
         // For each of the choices in choicesArray,
         // Create a button element whose name, value, and textContent properties are the value of that choice,
         // attach a "click" event listener with the buttonHandler function,
@@ -98,7 +98,7 @@ import React from 'react'
         return [doggoImgUrl, correctBreed, breedChoices];
     }
 
-    // TODO 5
+    // TODO 5 (Peniel & Victory)
     // Asynchronously call the loadQuizData() function,     
     // Then call renderQuiz() with the returned imageUrl, correctAnswer, and choices 
     
