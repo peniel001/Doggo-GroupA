@@ -102,6 +102,9 @@ async function startQuiz() {
     renderQuiz(imgUrl, correctBreed, choices);
 }
 
-startQuiz();
+function App() {
+    startQuiz();
+    return null;
+}
 
 export default App
