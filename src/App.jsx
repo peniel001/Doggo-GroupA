@@ -43,9 +43,12 @@ import React from 'react'
     // Given a URL, fetch the resource at that URL, 
     // then parse the response as a JSON object,
     // finally return the "message" property of its body
-    async function fetchMessage(url) {
-        
-    }
+async function fetchMessage(url) {
+    const response = await fetch(url);
+    const data = await response.json();
+
+    return data.message;
+}
 
 
     // Function to add the multiple-choice buttons to the page
