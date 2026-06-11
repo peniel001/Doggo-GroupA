@@ -32,10 +32,16 @@ import React from 'react'
     // Given a URL such as "https://images.dog.ceo/breeds/poodle-standard/n02113799_2280.jpg"
     // return the breed name string as formatted in the breed list, e.g. "standard poodle"
     function getBreedFromURL(url) {
-        // The string method .split(char) may come in handy
-        // Try to use destructuring as much as you can
+        const [, breedPath] = url.split("/breeds/");
+        const [breed] = breedPath.split("/");
         
+        const [mainBreed, subBreed] = breed.split("-");
+        
+        return subBreed
+        ? `${subBreed} ${mainBreed}`
+        : mainBreed;     
     }
+
 
 
 
