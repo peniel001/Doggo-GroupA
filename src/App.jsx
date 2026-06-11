@@ -31,7 +31,8 @@ import React from 'react'
     // TODO 2(Laura)
     // Given a URL such as "https://images.dog.ceo/breeds/poodle-standard/n02113799_2280.jpg"
     // return the breed name string as formatted in the breed list, e.g. "standard poodle"
-    function getBreedFromURL(url) {
+    // Uses string splitting and destructing as specified in the task requiments.
+	function getBreedFromURL(url) {
         const [, breedPath] = url.split("/breeds/");
         const [breed] = breedPath.split("/");
         
