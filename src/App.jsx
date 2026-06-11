@@ -21,13 +21,30 @@ import React from 'react'
     // TODO 1(David)
     // Given an array of possible answers, a correct answer value, and a number of choices to get,
     // return a list of that many choices, including the correct answer and others from the array
-    function getMultipleChoices(n, correctAnswer, array) {
+    //function getMultipleChoices(n, correctAnswer, array) {
         // Use a while loop and the getRandomElement() function
         // Make sure there are no duplicates in the array
 
+    // Here's one possible implementation:}
+    
+function getMultipleChoices(n, correctAnswer, array) {
+    // Start with the correct answer
+    const choices = [correctAnswer];
+
+    // Keep adding choices until we have n items
+    while (choices.length < n) {
+        const randomAnswer = getRandomElement(array);
+
+        // Only add it if it's not already in the choices array
+        if (!choices.includes(randomAnswer)) {
+            choices.push(randomAnswer);
+        }
     }
 
+    return choices;
+}
     
+
     // TODO 2(Laura)
     // Given a URL such as "https://images.dog.ceo/breeds/poodle-standard/n02113799_2280.jpg"
     // return the breed name string as formatted in the breed list, e.g. "standard poodle"
@@ -43,12 +60,9 @@ import React from 'react'
     // Given a URL, fetch the resource at that URL, 
     // then parse the response as a JSON object,
     // finally return the "message" property of its body
-async function fetchMessage(url) {
-    const response = await fetch(url);
-    const data = await response.json();
-
-    return data.message;
-}
+    async function fetchMessage(url) {
+        
+    }
 
 
     // Function to add the multiple-choice buttons to the page
@@ -67,22 +81,11 @@ async function fetchMessage(url) {
 
         const options = document.getElementById("options"); // Container for the multiple-choice buttons
 
-        // TODO 4(Chiburuoma)
+        // TODO 4(Chibrouma)
         // For each of the choices in choicesArray,
         // Create a button element whose name, value, and textContent properties are the value of that choice,
         // attach a "click" event listener with the buttonHandler function,
-        // and append the button as a child of the options elementl
-    options.replaceChildren();
-
-    choicesArray.forEach(choice => {
-        const button = document.createElement("button");
-        button.name = choice;
-        button.value = choice;
-        button.textContent = choice;
-
-        button.addEventListener("click", buttonHandler);
-        options.appendChild(button);
-    });
+        // and append the button as a child of the options element
         
     }
 
